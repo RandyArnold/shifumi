@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+
+const icons = {
+    rock: '✊',
+    paper: '🤚',
+    scissors: '✌️'
+};
+
+function Player({action = 'rock'}) {
+    return (
+        <div className="Fightbox">
+            {icons[action]}
+        </div>
+    );
+}
+
+function ActionButton({action}) {
+    return (
+        <button className="Action">
+            {icons[action]}
+        </button>
+    );
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="Container">
+          <h1>ShiFuMi</h1>
+          <Player ></Player>
+          <Player ></Player>
+          <div className="Select">
+              <ActionButton action={'rock'} ></ActionButton>
+              <ActionButton action={'paper'} ></ActionButton>
+              <ActionButton action={'scissors'} ></ActionButton>
+          </div>
+          <h2 className="Result">
+              Player wins
+          </h2>
+      </div>
     </div>
   );
 }
