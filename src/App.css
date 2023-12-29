@@ -43,22 +43,32 @@ body {
 }
 
 .Select {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
+  display: flex;
+  justify-content: center;
 }
 
 .Action {
-  margin: 2rem;
+  margin: .2rem;
   border-radius: 10px;
   background-color: var(--background);
   font-size: 3rem;
   border: var(--background);
   cursor: pointer;
+  flex: 3;
 }
 
 .Action:hover {
   background-color: var(--active);
 }
 
+@media only screen and (max-width : 500px) {
+  .Action {
+    font-size: 2rem;
+    width: 0;
+  }
+
+  .Fightbox {
+    margin: 2rem 1rem;
+  }
+}
 
